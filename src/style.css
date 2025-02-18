@@ -1,0 +1,327 @@
+/* ========== GENERAL ========== */
+
+:root {
+  --green-color: #55b685;
+  --dark-grey-color: #6c727f;
+  --light-grey-color: #d9d9d9;
+  --black-color: #000000;
+  --white-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.page-container {
+  max-width: 1300px;
+  margin: 2rem auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: normal; */
+  /* justify-content: unset; */
+  gap: 2rem;
+}
+
+/* ========== END OF GENERAL ========== */
+
+/* ========== NAVIGATION BAR ========== */
+
+.navbar {
+  color: white;
+  padding: 10px 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.navbar-logo,
+.navbar-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.contact-text {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.contact-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px; /* Thickness of the sliding bar */
+  background-color: var(--green-color); /* Color of the sliding bar */
+  transition: width 0.3s ease-in-out; /* Smooth transition */
+}
+
+.contact-text:hover::after {
+  width: 100%; /* Full width on hover */
+}
+
+/* ========== END OF NAVIGATION BAR ========== */
+
+/* ========== HOUSE SECTION ========== */
+
+.house-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  margin: 0 1rem;
+  gap: 5rem;
+}
+
+.house-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.house-title p {
+  font-family: "Inter", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 11.5px;
+  color: var(--white-color);
+  background: var(--green-color);
+  border-radius: 31px;
+  padding: 5px 13px;
+}
+
+.house-headline h1 {
+  font-family: "Inter", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 55px;
+  color: var(--black-color);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.house-details h3 {
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 25px;
+  color: var(--dark-grey-color);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.house-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.house-items p {
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 11.5px;
+  color: var(--dark-grey-color);
+  border: 1px solid rgba(108, 114, 127, 0.12);
+  border-radius: 31px;
+  padding: 6px 24px;
+}
+
+.carousel {
+  position: relative;
+  width: 100%; /* Adjust as needed */
+  max-width: 651px; /* Adjust as needed */
+  height: 470px;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.house-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.house-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  opacity: 0;
+  transition: opacity 1.2s ease-out; /* Smooth transition */
+}
+
+.house-image img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* ========== END OF HOUSE SECTION ========== */
+
+/* ========== DETAILS SECTION ========== */
+
+.details-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  margin: 0 1rem;
+}
+
+.details-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
+}
+
+.details-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-text p:first-child {
+  font-family: "Inter", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px;
+  color: var(--green-color);
+  text-align: center;
+}
+
+.details-text p {
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  color: var(--dark-grey-color);
+  text-align: center;
+}
+
+/* ========== END OF DETAILS SECTION ========== */
+
+/* ========== FLOATING BUTTON ========== */
+
+.contact-float {
+  /* position: fixed; */
+  /* bottom: 20px; */
+  /* right: 30px; */
+  /* z-index: 1000; */
+  /* cursor: pointer; */
+  /* width: 3.7%; */
+  /* max-width: 7.8vh; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* margin: 0 0rem 0 0; */
+  /* position: relative; */
+  padding: 0 2rem 2rem 0;
+}
+
+.contact-float img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ========== END OF FLOATING BUTTON ========== */
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .page-container {
+    gap: 2rem;
+  }
+  .navbar-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .house-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .house-headline h1 {
+    font-size: 40px;
+  }
+
+  .house-details h3 {
+    font-size: 18px;
+  }
+
+  .details-section {
+    padding: 0;
+    margin: 0rem 1rem;
+  }
+
+  .details-info {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .carousel {
+    max-width: 100%;
+    height: 377px;
+  }
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .navbar-container {
+    margin: 0 0.5rem;
+  }
+
+  .house-section {
+    gap: 2rem;
+    padding: 0;
+  }
+
+  .house-headline h1 {
+    font-size: 40px;
+  }
+
+  .house-details h3 {
+    font-size: 18px;
+  }
+}
