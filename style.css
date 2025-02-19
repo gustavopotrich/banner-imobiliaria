@@ -61,6 +61,11 @@ a {
   align-items: center;
   justify-content: center;
   gap: 0.3rem;
+  transition: filter 0.3s ease-out;
+}
+
+.navbar-logo:hover {
+  filter: drop-shadow(0px 0px 3px var(--green-color));
 }
 
 .contact-text {
@@ -107,15 +112,30 @@ a {
   width: 100%;
 }
 
+.house-title {
+  background-color: var(--green-color);
+  border-radius: 31px;
+  transition: background-color 0.5s ease-out, border 0.5s ease-out;
+  cursor: pointer;
+}
+
+.house-title:hover {
+  background-color: var(--white-color);
+  border: 1px solid var(--green-color);
+}
+
 .house-title p {
   font-family: "Inter", serif;
   font-weight: 700;
   font-style: normal;
   font-size: 11.5px;
   color: var(--white-color);
-  background: var(--green-color);
-  border-radius: 31px;
   padding: 5px 13px;
+  transition: color 0.3s ease-out;
+}
+
+.house-title p:hover {
+  color: var(--green-color);
 }
 
 .house-headline h1 {
@@ -153,9 +173,30 @@ a {
   font-style: normal;
   font-size: 11.5px;
   color: var(--dark-grey-color);
+  padding: 6px 24px;
+  transition: color 0.3s ease-out;
+}
+
+.house-items p:hover {
+  color: var(--white-color);
+}
+
+.house-items-button {
   border: 1px solid rgba(108, 114, 127, 0.12);
   border-radius: 31px;
-  padding: 6px 24px;
+  transition: background-color 0.5s ease-out;
+}
+
+.house-items-button:hover {
+  background-color: var(--green-color);
+}
+
+.house-image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .carousel {
@@ -181,12 +222,17 @@ a {
   height: 100%;
   object-fit: cover; /* Maintain aspect ratio and cover the container */
   opacity: 0;
-  transition: opacity 1.2s ease-out; /* Smooth transition */
+  transition: opacity 1.2s ease-out, transform 0.5s ease-out; /* Smooth transition */
+  cursor: pointer;
 }
 
 .house-image img.active {
   opacity: 1;
   z-index: 1;
+}
+
+.house-image img:hover {
+  transform: scale(1.05);
 }
 
 /* ========== END OF HOUSE SECTION ========== */
@@ -260,6 +306,11 @@ a {
   width: 100%;
   height: 100%;
   display: block;
+  transition: filter 0.3s ease-out;
+}
+
+.contact-float img:hover {
+  filter: drop-shadow(0px 0px 3px var(--green-color));
 }
 
 /* ========== END OF FLOATING BUTTON ========== */
